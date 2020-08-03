@@ -1,7 +1,5 @@
 FROM maven:3.6.3-jdk-8 as builder
 WORKDIR /tmp/src
-#RUN curl -sLJO https://github.com/Eneco/kafka-connect-twitter/archive/0.1.13.tar.gz && \
-#    tar -xzf kafka-connect-twitter-0.1.13.tar.gz
 RUN git clone -b source-connector https://github.com/scholzj/kafka-connect-twitter.git
 WORKDIR /tmp/src/kafka-connect-twitter
 RUN mvn package -DskipTests
